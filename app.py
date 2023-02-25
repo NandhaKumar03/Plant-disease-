@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import requests
 import urllib.request as urllib2
 
-API_URL = "https://api-inference.huggingface.co/models/nickmuchi/yolos-small-plant-disease-detection"
+API_URL = "https://api-inference.huggingface.co/models/gianlab/swin-tiny-patch4-window7-224-finetuned-plantdisease"
 headers = {"Authorization": "Bearer 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"}
 app = Flask(__name__)
 
