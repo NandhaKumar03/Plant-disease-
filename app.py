@@ -5,15 +5,16 @@ API_URL = "https://api-inference.huggingface.co/models/nickmuchi/yolos-small-pla
 headers = {"Authorization": "Bearer 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"}
 
 app = Flask(__name__)
+@app.route("/index", methods=['GET','POST'])
 def index():
-    return 'hello'
+    return 'hello there'
 def query(data):
     # with open(filename, "rb") as f:
     #     data = f.read()
     response = requests.post(API_URL, headers=headers, data=data)
     return response.json()
 
-@app.route("/predict", methods=["POST"])
+@app.route("/predict", methods=["GET","POST"])
 def predict():
     urlimg2 = "https://firebasestorage.googleapis.com/v0/b/farmlabslogin.appspot.com/o/users%2FGzojrnYywSaIvLB8Q85Aijbc7O73%2Fuploads%2F"
     if request.method == "GET":
