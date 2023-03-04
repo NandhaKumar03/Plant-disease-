@@ -5,7 +5,8 @@ API_URL = "https://api-inference.huggingface.co/models/nickmuchi/yolos-small-pla
 headers = {"Authorization": "Bearer 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"}
 
 app = Flask(__name__)
-
+def index():
+    return 'hello'
 def query(data):
     # with open(filename, "rb") as f:
     #     data = f.read()
