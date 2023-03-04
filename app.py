@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
 import requests
-import urllib.request as urllib2
 
-API_URL = "https://api-inference.huggingface.co/models/gianlab/swin-tiny-patch4-window7-224-finetuned-plantdisease"
-headers = {"Authorization": "Bearer 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"}
+API_URL = "https://api-inference.huggingface.co/models/nickmuchi/yolos-small-plant-disease-detection"
+headers = {"Authorization": "Bearer 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"}
+
 app = Flask(__name__)
 
 def query(data):
@@ -12,11 +12,7 @@ def query(data):
     response = requests.post(API_URL, headers=headers, data=data)
     return response.json()
 
-@app.route("/")
-def index():
-    return "Hello World!"
-
-@app.route("/predict", methods=["GET"])
+@app.route("/predict", methods=["POST"])
 def predict():
     urlimg2 = "https://firebasestorage.googleapis.com/v0/b/farmlabslogin.appspot.com/o/users%2FGzojrnYywSaIvLB8Q85Aijbc7O73%2Fuploads%2F"
     if request.method == "GET":
@@ -30,3 +26,6 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+# files = {'file': open('test.jpg', 'rb')}
+# r = requests.post(url, files=files)
