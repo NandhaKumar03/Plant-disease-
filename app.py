@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import requests
 
 API_URL = "https://api-inference.huggingface.co/models/nickmuchi/yolos-small-plant-disease-detection"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": "Bearer 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"}
 
 app = Flask(__name__)
 @app.route("/index", methods=['GET','POST'])
