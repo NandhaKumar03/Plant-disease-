@@ -16,7 +16,7 @@ def query(data):
 
 @app.route("/predict", methods=["GET","POST"])
 def predict():
-    urlimg2 = "https://firebasestorage.googleapis.com/v0/b/farmlabslogin.appspot.com/o/users%2F8bSzO4oB3ccvp9X2VpCFuWktM0F3%2Fuploads%2F"
+    urlimg2 = "https://firebasestorage.googleapis.com/v0/b/farmlabslogin.appspot.com/o/users%2F3jD7eKKvx0RNnTRerAGZh3juhch2%2Fuploads%2F"
     if request.method == "GET":
         img = request.args['img']
         datas = img.split('/')
